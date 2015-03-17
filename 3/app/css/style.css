@@ -1,0 +1,28 @@
+/* Allow vertical alignment in tables */
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
+}
+
+/* Mouseover recognition for ng-click */
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+/* make hidden elements merely invisible */
+.ng-hide:not(.ng-hide-animate) {
+  /* this is just another form of hiding an element */
+  visibility: hidden;
+  display: block!important;
+  /*
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  */
+}
+
+/* turn on placeholders for contenteditable elements */
+[contentEditable=true]:empty:not(:focus):before{
+  content:attr(data-ph)
+}

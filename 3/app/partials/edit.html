@@ -1,0 +1,22 @@
+<style type="text/css" media="screen">
+    #editor {
+        position: relative;
+        height: 800px;
+        width: 800px;
+    }
+</style>
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1 contenteditable="true" style="outline:none" ng-model='note.title' 
+        ng-change='updateTitle(note.title)' ng-bind-html="note.title" 
+        data-ph="[edit title]"></h1>
+    <hr>
+    <br/>
+    <div class="container text-left"
+      <div id="editor" ng-model='note.text'>{{ note.text }}</div>
+      <br/>
+      <br/>
+      <button type="button" class="btn btn-success" ng-click="save()">(You can also save here)</button>
+    </div>
+  </div>
+</div>

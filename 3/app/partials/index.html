@@ -1,0 +1,40 @@
+<div class="jumbotron text-center">
+  <h1>Notes that save themselves.</h1>
+  <hr>
+  <br/>
+  <a type="button" class="btn btn-success" ng-click='add()'>Add a Note</a>
+  </div>
+</div>
+<div class="container">
+  <table class="table table-striped" ng-show="notes.length">
+    <thead>
+      <tr>
+        <th><h4>Title</h4></th>
+        <th><h4>Last Edited</h4></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="clickable-row" ng-repeat="note in notes | orderBy: getDate: true" ng-hide='{{note.deleted}}' ng-mouseover='note.selected = true' ng-mouseout='note.selected = false' href="/edit/{{note.noteId}}">
+        <td class="col-md-8" ng-click="go('/edit/' + note.noteId)">
+          <strong ng-bind-html="note.title"></strong>
+        </td>
+        <td class="col-md-3" ng-bind="localTime(note.date)"></td>
+        <td class="col-md-1 vert-align">
+          <button type="button" class="btn btn-default" ng-show="note.selected" ng-click="delete(note)">
+            <span class='glyphicon glyphicon-trash'></span>
+          </button>
+        </td>
+        <!--href="#/edit/{{note.urlstr}}"-->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+</script>

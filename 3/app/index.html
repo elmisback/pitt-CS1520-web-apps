@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Autosaving Notes App (AngularJS)</title>
+  <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <!-- End Bootstrap -->
+  <!-- Angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+  <!-- End Angular -->
+  <!-- Ace Editor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.8/ace.js" type="text/javascript" charset="utf-8"></script>
+  <!-- End Ace -->
+  <!-- Moment dates -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
+  <!-- End moment -->
+  <!-- My styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- End my styles -->
+</head>
+<body ng-app="notes-autosave-example" ng-controller='MainCtrl'>
+  <!-- -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="nav navbar-nav navbar-right">
+        <a class="btn btn-default glyphicon glyphicon-log-out" href="{{logout_url}}"></a>
+      </div>
+    </div>
+  </nav>
+  <div ng-view></div>
+
+  <script src="js/app.js"></script>
+  <!-- <script src="js/angular-contenteditable.js"></script> -->
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
